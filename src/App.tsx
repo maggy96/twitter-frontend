@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { fetchTimeline } from './api/timeline';
-import './App.scss';
 import Timeline from './components/Timeline';
 import TweetData from './types/tweetData';
 
@@ -15,7 +14,7 @@ const App = () => {
   }, [])
 
   return (
-    <div className="App">
+    <div>
       <Timeline tweets={tweets}/>
     </div>
   );
