@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import { fetchTimeline } from './api/timeline';
+import './App.scss';
+import Timeline from './components/Timeline';
+import TweetData from './types/tweetData';
 
-function App() {
+const App = () => {
+  const [tweets, setTweets] = useState<TweetData[]>([]);
+  useEffect(() => {
+    const fetch = async() => {
+      const response = await fetchTimeline();
+      setTweets(response);
+    };
+    fetch();
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Timeline tweets={tweets}/>
     </div>
   );
 }

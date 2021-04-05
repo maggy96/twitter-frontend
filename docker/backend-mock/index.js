@@ -1,10 +1,12 @@
 const express = require('express')
 const faker = require('faker');
-const app = express()
-const port = 9001
+const cors = require('cors');
+const app = express();
+const port = 9001;
+app.use(cors());
 
 app.get('/tweets', (req, res) => {
-  const tweets = Array.from(Array(1000)).map(x => (
+  const tweets = Array.from(Array(10)).map(x => (
     {
       displayName: faker.name.firstName(),
       userName: faker.internet.userName(),
@@ -12,6 +14,8 @@ app.get('/tweets', (req, res) => {
       text: faker.lorem.paragraph(),
       likes: faker.datatype.number(),
       retweets: faker.datatype.number(),
+      avatar: faker.image.avatar(),
+      time: faker.date.recent(),
     }));
   res.send(tweets);
 })
