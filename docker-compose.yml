@@ -1,0 +1,6 @@
+version: "3.4"
+services:
+  backend-mock:
+    build: ./docker/backend-mock
+    ports:
+      - "9001:9001"
