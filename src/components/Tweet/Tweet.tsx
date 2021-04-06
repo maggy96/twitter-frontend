@@ -1,5 +1,4 @@
 import TweetData from "../../types/tweetData";
-import "./tweet.css";
 
 export const Tweet = ({
   displayName,
