@@ -3,7 +3,7 @@ import TweetData from "../types/tweetData";
 
 export const fetchTimeline = async (): Promise<TweetData[]> => {
   try {
-    const response = await axios.get('http://localhost:9001/tweets');
+    const response = await axios.get('http://localhost:3000/tweets');
     return response.data;
   } catch (error) {
     return [];

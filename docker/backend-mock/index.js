@@ -15,7 +15,7 @@ app.get('/tweets', (req, res) => {
       likes: faker.datatype.number(),
       retweets: faker.datatype.number(),
       avatar: faker.image.avatar(),
-      time: faker.date.recent(),
+      date: faker.date.recent(),
     }));
   res.send(tweets);
 })

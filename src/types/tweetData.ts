@@ -1,12 +1,12 @@
 type TweetData = {
   avatar: string;
   displayName: string;
-  likes: Number;
-  retweets: Number;
+  likes: number;
+  retweets: number;
   text: string;
-  time: Date;
+  date: Date;
   userName: string;
-  verified: Boolean;
+  verified: boolean;
 }
 
 export default TweetData;
