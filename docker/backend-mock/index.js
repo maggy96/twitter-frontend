@@ -20,6 +20,10 @@ app.get('/tweets', (req, res) => {
   res.send(tweets);
 })
 
+app.post('/tweet', (req, res) => {
+  res.json({status: 'ok'});
+})
+
 app.listen(port, () => {
   console.log(`backend mock listening at http://localhost:${port}`)
 })
