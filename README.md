@@ -17,3 +17,8 @@ In the project directory, you can run:
 - react
 - typescript
 - tailwind.css
+
+## ToDo
+- [ ] error handling
+- [ ] loading animations
+- [ ] auth/jwt

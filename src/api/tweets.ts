@@ -9,3 +9,13 @@ export const fetchTimeline = async (): Promise<TweetData[]> => {
     return [];
   }
 }
+
+export const sendTweet = async (tweet: TweetData): Promise<void> => {
+  try {
+    await axios.post(
+      'http://localhost:3000/tweet', tweet
+    );
+  } catch (error) {
+    console.error(error);
+  }
+}
